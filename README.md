@@ -7,7 +7,7 @@
 * Elaborating a graphql root endpoint.
 * Elaborating graphql queries.
 * Getting GraphQL data.
-* Add, Update and Delete data.
+* Generating GraphQL mutation types.
 
 
 
