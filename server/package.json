@@ -22,9 +22,8 @@
   },
   "homepage": "https://github.com/bettaibi/graphQL#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.5.0"
+    "apollo-server": "^2.25.3",
+    "graphql": "^14.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
