@@ -2,17 +2,10 @@
 
 ### This repository illustrate the following:
 
-* Creating a GraphQL Http server using express-graphql.
+* Creating a GraphQL Http server using Apollo-server.
 * Creating a GraphQL Schema.
 * Elaborating a graphql root endpoint.
-* Elaborating graphql queries.
+* Elaborating graphql queries, Mutation, Subscription. (TypeDef)
+* Elaborating graphql resolvers.
 * Getting GraphQL data.
-* Generating GraphQL mutation types.
-
-
-
-## Dependencies
-
-```sh
-npm install --save express express-graphql graphql
-```
+* Consume the api using apollo-client
