@@ -1,0 +1,34 @@
+
+type Query{
+    info: String!
+    feed: [Link!]!
+    findById(id: ID!): Link!
+}
+
+type Mutation{
+    newLink(url: String!, description: String!): Link!
+    findOneAndUpdate(id: ID!, url: String!, description: String!): Link!
+    findOneAndDelete(id: ID!): ID!
+    login(email: String!, password: String!): TokenPayload! 
+    register(name: String!, email: String!, password: String!): TokenPayload!
+}
+
+type Link{
+    id: ID!
+    description: String!
+    url: String!
+    postedBy: User
+}
+
+type User{
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+    links: [Link!]!
+}
+
+type TokenPayload{
+    token: String!
+    user: User!
+}
