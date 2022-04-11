@@ -1,4 +1,4 @@
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, PubSub } = require('apollo-server');
 const { getUserId } = require('./src/util');
 
 /** Bring typeDefs and resolvers files */
@@ -16,6 +16,9 @@ const path = require('path');
 const {PrismaClient} = require('@prisma/client');
 const prisma = new PrismaClient();
 
+/** Implement Subscription with PubSub */
+const pubSub = new PubSub();
+
 const server = new ApolloServer({
     typeDefs: fs.readFileSync(
         path.join(__dirname, 'src/schema.graphql'),
@@ -31,6 +34,7 @@ const server = new ApolloServer({
         return {
             ...req,
             prisma,
+            pubSub,
             userId: req && req.headers.authorization ? getUserId(req) : null
         }
     }

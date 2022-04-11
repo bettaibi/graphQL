@@ -7,12 +7,14 @@ async function newLink(parent, args, context){
         const link = {
             url: args.url, 
             description: args.description,
-            postedBy: context.userId
+            postedById: context.userId
         };
 
         const saved = await context.prisma.link.create({
             data: link
         });
+
+        context.pubSub.publish('NEW_LINK', saved);
 
         return saved;
     }

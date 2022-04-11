@@ -13,6 +13,10 @@ type Mutation{
     register(name: String!, email: String!, password: String!): TokenPayload!
 }
 
+type Subscription{
+    newLink: Link!
+}
+
 type Link{
     id: ID!
     description: String!
